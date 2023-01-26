@@ -1,15 +1,14 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const app = express()
-const port = 8000
-app.use(express.urlencoded({
-  extended : true
-}))
-
-app.use(express.json())
 require('dotenv').config()
 
-// connect api to front react
+const app = express()
+app.use(express.json())
+app.use(express.urlencoded({ extended : true }))
+
+const port = 8000
+
+// to connect the api to front react
 const cors = require('cors')
 app.use(cors())
 //
